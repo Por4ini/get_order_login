@@ -1,26 +1,31 @@
+<!-- src/App.vue -->
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <select v-model="currentLocale" @change="changeLocale">
+      <option value="en">English</option>
+      <option value="ua">Українська</option>
+      <option value="ru">Русский</option>
+    </select>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { useI18n } from "vue-i18n";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
-</script>
+  setup() {
+    const { locale } = useI18n();
+    const currentLocale = locale.value;
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+    function changeLocale(event) {
+      locale.value = event.target.value;
+    }
+
+    return {
+      currentLocale,
+      changeLocale,
+    };
+  },
+};
+</script>

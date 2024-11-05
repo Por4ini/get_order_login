@@ -1,0 +1,19 @@
+/* Colors */
+:root {
+    --background-color: #FDFFFE;
+    --main-text: #000;
+    --secondary-text: #333;
+    --tertiary-text: #555;
+    --light-grey: #F8F9FC;
+    --blue: #0057FC;
+    --white: #fff;
+    --error: #FB162F;
+  }
+  
+  /* Fonts */
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+  
+  :root {
+    --font-family-main: 'Ubuntu', sans-serif;
+    --font-family-secondary: 'Inter', sans-serif;
+  }
